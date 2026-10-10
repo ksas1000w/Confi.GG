@@ -125,7 +125,6 @@ export async function checkCompatibility(input: CheckInput): Promise<CheckResult
   const mbFormFactor = mb ? await ffName(mb.formFactorId) : "";
   const caseFormFactor = pcCase ? await ffName(pcCase.formFactorId) : "";
 
-  // ── 1. Сокет CPU ↔ MB ──
   if (cpu && mb && cpuSocket !== mbSocket) {
     issues.push(
       `Несовместимость сокетов: процессор (${cpuSocket}) и материнская плата (${mbSocket})`,
@@ -220,8 +219,10 @@ export async function checkCompatibility(input: CheckInput): Promise<CheckResult
     if (processorHasIGpu(cpu.model, cpu.integratedGpu)) {
       setStatus("processors", cpu.processorId, "Compatible");
     } else {
-      issues.push("У процессора нет встроенной графики, а видеокарта отсутствует.");
-      setStatus("processors", cpu.processorId, "Warning");
+      issues.push(
+        "У процессора нет встроенной графики, а видеокарта отсутствует — добавьте видеокарту или выберите процессор со встроенной графикой.",
+      );
+      setStatus("processors", cpu.processorId, "Incompatible");
     }
   } else if (gpu) {
     setStatus("graphics_cards", gpu.gpuId, "Compatible");
