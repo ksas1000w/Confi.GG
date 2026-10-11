@@ -82,8 +82,8 @@ INSERT INTO processors (model, manufacturer_id, socket_id, cores, threads, base_
 ('AMD A6-7480', 2, 15, 2, 2, 3.50, 3.80, 65, 1, 1, 64, 65),
 ('AMD Athlon X4 950', 2, 15, 4, 4, 3.50, 3.80, 65, 0, 1, 64, 65),
 ('AMD Athlon X2 450', 2, 15, 2, 2, 3.50, 3.80, 65, 0, 1, 64, 65),
-('Intel Xeon E5 2650 V3', 1, 9, 10, 20, 2.30, 3.00, 105, 0, 1, 768, 105),
-('Intel Xeon E5 2680 V2', 1, 9, 10, 20, 2.80, 3.60, 115, 0, 1, 768, 115),
+('Intel Xeon E5 2650 V3', 1, 10, 10, 20, 2.30, 3.00, 105, 0, 1, 768, 105),
+('Intel Xeon E5 2680 V2', 1, 9, 10, 20, 2.80, 3.60, 115, 0, 3, 768, 115),
 ('Intel Xeon E5 2667 V4', 1, 10, 8, 16, 3.20, 3.60, 135, 0, 1, 768, 135),
 ('Intel Core i5-650', 1, 7, 2, 2, 3.20, 3.46, 73, 1, 3, 16, 73);
 
@@ -189,7 +189,7 @@ INSERT INTO kits (kit_name, description, compatibility_checked) VALUES
 ('X79 LGA 2011 Intel Xeon E5 2680v2, 32GB, RGB-Кулер', 'МП + процессор + память + кулер', 0),
 ('MAXSUN MS-MoDT 12450H ITX WIFI', 'Материнская плата + процессор ITX (интегрированный)', 0),
 ('X99 LGA 2011-3 Intel Xeon E5 2667v4 64Gb DDR4,1T SSD M.2', 'МП + процессор + память + SSD', 0),
-('X99 LGA 2011-3 xeon E5 2680 V4 32GB DDR4, GTX1660S 6GB', 'МП + процессор + память + видеокарта', 0);
+('X99 LGA 2011-3 xeon E5 2667 V4 32GB DDR4, GTX1660S 6GB', 'МП + процессор + память + видеокарта', 0);
 
 INSERT INTO kit_components (kit_id, component_type, component_id, quantity) VALUES
 (1, 'motherboard', (SELECT motherboard_id FROM motherboards WHERE model = 'Esonic H55'), 1),
